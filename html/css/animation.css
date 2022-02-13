@@ -1,0 +1,75 @@
+@keyframes ColorChange {
+    from {color: white; font-size: 50px}
+    50% {color: rgb(77, 86, 164); font-size: 60px}
+    to {color: white; font-size: 50px}
+}
+
+@keyframes LogoMoveUp {
+    from {top: 400px;}
+    to {top: 300px;}
+}
+
+@keyframes LogoMoveDown {
+    from {top: 300px;}
+    to {top: 400px;}
+}
+
+@keyframes LogoMoveToFinalPosition {
+    from {top: 400px}
+    to {top: 180px; left: 180px; width: 130px; height: 130px;}
+}
+
+@keyframes LogoMoveToFinalPositionReverse {
+    from {top: 180px; left: 180px; width: 130px; height: 130px;}
+    to {top: 300px; left: 50%; width: 180px; height: 180px;}
+}
+
+@keyframes InputMoveIn {
+    from {top: 550px; opacity: 0;}
+    to {top: 450px; opacity: 1;}
+}
+
+@keyframes InputMoveOut {
+    from {top: 450px; opacity: 1;}
+    to {top: 550px; opacity: 0;}
+}
+
+@keyframes ButtonMoveOut {
+    from {top: 72px; opacity: 1;}
+    to {top: 172px; opacity: 0;}
+}
+
+@keyframes ButtonMoveIn {
+    from {top: 172px; opacity: 0;}
+    to {top: 72px; opacity: 1;}
+}
+
+@keyframes FadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes FadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+@keyframes LeftToRight {
+    from {left: 1520px; opacity: 0}
+    to {left: 360px; opacity: 1}
+}
+
+@keyframes LeftToRightHead {
+    from {left: 1520px; opacity: 0}
+    to {left: 0px; opacity: 1}
+}
+
+@keyframes LeftToRightReverse {
+    from {left: 360px; opacity: 1;}
+    to {left: 1520px; opacity: 0;}
+}
+
+@keyframes LeftToRightHeadReverse {
+    from {left: 0px; opacity: 1;}
+    to {left: 1520px; opacity: 0;}
+}

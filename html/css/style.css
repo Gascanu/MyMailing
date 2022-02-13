@@ -1,0 +1,674 @@
+@font-face {
+    font-family: BebasNeue;
+    src: url("../webfonts/BebasNeue/BebasNeue-Regular.woff");
+}
+
+@font-face {
+    font-family: Copperplate;
+    src: url("../webfonts/Copperplate/Copperplate\ Gothic\ Bold\ Regular.ttf");
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+/* 
+-----------------------
+--- GENERAL THINGS ----
+-----------------------
+*/
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#mail { /* is the complete UI-Window */
+    width: 1510px;
+    height: 900px;
+    margin: auto;
+    position: relative;
+    top: 100px;
+    scrollbar-width: none;
+}
+
+#logo { /* the logo of the mail system, can be change in the img folder */
+    width: 180px;
+    height: 180px;
+    margin: 0;
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#notification {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    opacity: 0;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#notification_title {
+    font-size: 30px;
+}
+
+#notification_msg {
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+input:focus {
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+/* 
+-----------------------
+---- LOADINGSCREEN ----
+-----------------------
+*/
+
+#loadingscreen { /* the loadingscreen, which is showen while the client doesn't has all data */
+    background-color: rgb(22, 27, 33);
+    width: 1510px;
+    height: 900px;
+}
+
+#loading { /* the text under the logo on the loadingscreen */
+    font-family: BebasNeue;
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    margin-top: 200px;
+    font-size: 50px;
+}
+
+/* the text animation */
+#l {animation: ColorChange 4s infinite; animation-timing-function: ease;}
+#o {animation: ColorChange 4s infinite; animation-delay: 0.5s; animation-timing-function: ease;}
+#a {animation: ColorChange 4s infinite; animation-delay: 1s; animation-timing-function: ease;}
+#d {animation: ColorChange 4s infinite; animation-delay: 1.5s; animation-timing-function: ease;}
+#i {animation: ColorChange 4s infinite; animation-delay: 2s; animation-timing-function: ease;}
+#n {animation: ColorChange 4s infinite; animation-delay: 2.5s; animation-timing-function: ease;}
+#g {animation: ColorChange 4s infinite; animation-delay: 3s; animation-timing-function: ease;}
+#dot {animation: ColorChange 4s infinite; animation-delay: 3.5s; animation-timing-function: ease;}
+#dot2 {animation: ColorChange 4s infinite; animation-delay: 4s; animation-timing-function: ease;}
+#dot3 {animation: ColorChange 4s infinite; animation-delay: 4.5s; animation-timing-function: ease;}
+
+/* 
+----------------------
+------- LOG IN -------
+----------------------
+*/
+
+#log_in { /* after the loadingscreen, you can see the log-in page */
+    position: absolute;
+    top: 450px;
+    width: 200px;
+    height: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    -ms-transform: translate(-50%);
+}
+
+#log_in input {
+    margin-top: 10px;
+    width: 200px;
+    height: 20px;
+    border-radius: 10px;
+    /* animation: InputMove 3s 1;
+    animation-timing-function: ease-in; */
+}
+
+#buttonLogIn { /* the button for the log in */
+    font-family: BebasNeue;
+    margin-top: 15px;
+    position: absolute;
+    background-color: rgb(59, 243, 221);
+    width: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    /* animation: FadeIn 3s 1;
+    animation-timing-function: ease-in; */
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#buttonLogIn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgb(59, 243, 221);
+}
+
+#failText { /* the text, which is shown, when the process fails */
+    font-family: 'Montserrat', sans-serif;
+    color: red;
+    margin-top: 90px;
+    left: 50%;
+    text-align: center;
+    position: absolute;
+    transform: translate(-50%);
+    width: 500px;
+}
+
+#toRegisterText {   /* the text, under the log-in-button, go to the register page */
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    position: absolute;
+    margin-top: 110px;
+    width: 500px;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#toRegisterButton { /* this is the button */
+    color: rgb(59, 243, 221);
+}
+
+#toRegisterButton:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* 
+----------------------
+------ REGISTER ------
+----------------------
+*/
+
+#buttonRegister {   /* the button for the register */
+    font-family: BebasNeue;
+    margin-top: 50px;
+    position: absolute;
+    background-color: rgb(59, 243, 221);
+    width: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    animation: FadeIn 3s 1;
+    animation-timing-function: ease-in;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#buttonRegister:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgb(59, 243, 221);
+}
+
+#passwordInputConfirm { /* the second input-field to verify the password  */
+    position: absolute;
+}
+
+#toLogInText {  /* if you already created a account, then you can go back to the log in page  */
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    position: absolute;
+    text-align: center;
+    margin-top: 110px;
+    width: 500px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+#toLogInButton {
+    color: rgb(59, 243, 221);
+}
+
+#toLogInButton:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#suffix {
+    position: absolute;
+    color: white;
+    left: 220px;
+    top: 15px;
+}
+
+/* 
+----------------------
+------ HOMEPAGE ------
+----------------------
+*/
+
+/* Homepage style */
+#Homepage_background {
+    position: absolute; 
+    background-color: white;
+    width: 1360px;
+    left: 360px;
+    height: 900px;
+    top: 0px
+}
+
+#Homepage_head {
+    position: absolute; 
+    background-color: rgb(22, 27, 33);
+    width: 1151px;
+    height: 100px;
+    top: 0px
+}
+
+#Homepage_left {
+    position: absolute; 
+    width: 396px;
+    height: 796px;
+    top: 100px;
+    border-right: rgb(22, 27, 33) solid 4px;
+    border-bottom: rgb(22, 27, 33) solid 4px;
+}
+
+#Homepage_right {
+    position: absolute; 
+    width: 778px;
+    height: 796px;
+    top: 100px;
+    left: 369px;
+    border-right: rgb(22, 27, 33) solid 4px;
+    border-bottom: rgb(22, 27, 33) solid 4px;
+}
+
+/* Homepage text */
+#Homepage_text {
+    position: absolute;
+    top: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    width: 1510px;
+    height: 900px;
+}
+
+#headline {
+    position: absolute;
+    font-family: Copperplate;
+    color: rgb(59, 243, 221);
+    left: 860px;
+    top: 15px;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+#text_head {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    /* background-color: black; */
+    text-align: center;
+    margin-right: 14px;
+}
+
+#logout {
+    position: absolute;
+    width: 100px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 5px;
+    margin-top: -5px;
+
+    font-family: BebasNeue;
+    text-align: center;
+    color: rgb(216, 216, 216);
+    background-color: darkred;
+    border-radius: 5px;
+}
+
+#logout:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px darkred;
+}
+
+#text_email {
+    color:  rgb(59, 243, 221);
+}
+
+#text_sidebar {
+    position: absolute;
+    transform: translate(0, -50%);
+    top: 350px;
+    width: 360px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#inbox_text {
+    font-family: BebasNeue;
+    position: absolute;
+    width: 270px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 5px;
+    font-family: BebasNeue;
+    text-align: center;
+    color: black;
+    background-color: rgb(59, 243, 221);
+    animation: FadeIn 3s 1;
+    animation-timing-function: ease-in;
+    border-radius: 5px;
+}
+
+#outbox_text {
+    margin-top: 100px;
+    position: absolute;
+    width: 270px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 5px;
+    font-family: BebasNeue;
+    text-align: center;
+    color: black;
+    background-color: rgb(59, 243, 221);
+    animation: FadeIn 3s 1;
+    animation-timing-function: ease-in;
+    border-radius: 5px;
+}
+
+#sendmail {
+    margin-top: 150px;
+    position: absolute;
+    width: 270px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 5px;
+    font-family: BebasNeue;
+    text-align: center;
+    color: black;
+    background-color: rgb(59, 243, 221);
+    animation: FadeIn 3s 1;
+    animation-timing-function: ease-in;
+    border-radius: 5px;
+}
+
+#refresh {
+    margin-top: 476px;
+    position: absolute;
+    width: 270px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 5px;
+    font-family: BebasNeue;
+    text-align: center;
+    color: black;
+    background-color: rgb(59, 243, 221);
+    animation: FadeIn 3s 1;
+    animation-timing-function: ease-in;
+    border-radius: 5px;
+}
+
+#refresh:hover {
+    box-shadow: 0px 0px 10px rgb(59, 243, 221);
+}
+
+/* 
+----------------------
+------ NEW MAIL ------
+----------------------
+*/
+
+#Send {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 100px;
+    left: 360px;
+    width: 1147px;
+    height: 796px;
+    background-color: white;
+    border-bottom:  rgb(22, 27, 33) solid 4px;
+    border-right:  rgb(22, 27, 33) solid 4px;
+}
+    
+#prefix {
+    color: rgb(128, 128, 128)
+}
+
+#receiver {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    /* background-color: red; */
+    width: 1107px;
+    padding: 2.5px;
+    border-bottom:rgba(128, 128, 128, 0.5) solid 1px;
+
+}
+
+#receiverEmail {
+    border: none;
+    max-width: 95%;
+    width: 95%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+#subject {
+    margin-left: 20px;
+    margin-right: 20px;
+    /* background-color: red; */
+    width: 95%;
+    padding: 2.5px;
+    border-bottom:rgba(128, 128, 128, 0.5) solid 1px;
+}
+
+#subjectEmail {
+    border: none;
+    max-width: 95%;
+    width: 95%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+#msg {
+    margin-left: 20px;
+    margin-right: 20px;
+    /* background-color: red; */
+    width: 1107px;
+    height: 781px;
+    padding: 2.5px;
+}
+
+#msgEmail {
+    box-sizing: border-box;
+    max-width: 100%;
+    width: 100%;
+    height: 630px;
+    max-height: 630px;
+    border: none;
+    resize: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+}
+
+.fa-paper-plane {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    color: white;
+    background-color: green;
+    height: 20px;
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.fa-paper-plane:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px green;
+}
+
+/* 
+----------------------
+----- INBOX LIST -----
+----------------------
+*/
+
+#preview_inbox {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    margin-left: 360px;
+    color: black;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 796px;
+    width: 396px;
+    max-height: 796px;
+    max-width: 396px;
+    /* padding-right: 10px; */
+    border-bottom:rgba(128, 128, 128, 0.5) solid 1px;
+    top: 100px;
+}
+
+.single_preview {
+    border-bottom:rgba(128, 128, 128, 0.5) solid 1px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#preview_outbox {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    margin-left: 360px;
+    color: black;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 796px;
+    width: 396px;
+    max-height: 796px;
+    max-width: 396px;
+    /* padding-right: 10px; */
+    border-bottom:rgba(128, 128, 128, 0.5) solid 1px;
+    top: 100px;
+}
+
+#preview_sender {
+    color: rgb(0, 71, 104);
+}
+
+#preview_text {
+    font-family: 'Montserrat', sans-serif;
+    resize: none;
+    
+    border: none;
+    height: auto;
+    width: 366px;
+    height: 75px;
+    font-size: small;
+    background-color: inherit;
+}
+
+#preview_date {
+    font-size: small;
+    color: rgb(128, 128, 128);
+    text-align: right;
+    margin-top: -35px;
+    margin-bottom: 10px;
+    /* padding-right: 45px; */
+}
+
+#ShowMail {
+    font-family: 'Montserrat', sans-serif;
+    position: absolute;
+    top: 100px;
+    left: 770px;
+    color: black;
+    width: 728px;
+    max-width: 728px;
+}
+
+#ShowMail_sender {
+    width: 728px;
+    max-width: 728px;
+    border-bottom:rgba(128, 128, 128, 0.5) solid 1px;
+}
+
+#from {color: rgb(0, 71, 104);}
+
+#ShowMail_date {
+    width: 728px;
+    max-width: 728px;
+    text-align: right;
+    margin-top: -35px;
+}
+
+#ShowMail_subject {
+    margin-top: 35px;
+    margin-bottom: 20px;
+    border-bottom:rgba(128, 128, 128, 0.5) solid 1px;
+    font-size: 20px;
+}
+
+#ShowMail_text {
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    border: none;
+    resize: none;
+    width: 728px;
+    max-width: 728px;
+    height: 608px;
+    max-height: 608px;
+}
+
+#delete {
+    margin-top: 17px;
+    position: absolute;
+    width: 50px;
+    left: 700px;
+    transform: translate(-50%);
+    padding: 5px;
+    text-align: center;
+    background-color: red;
+    border-radius: 5px;
+    color: rgb(216, 216, 216);
+}
+
+#delete:hover {
+    box-shadow: 0px 0px 10px red;
+}
+
+#unread {
+    margin-top: 17px;
+    position: absolute;
+    left: 650px;
+    transform: translate(-50%);
+    padding: 5px;
+    text-align: center;
+    color: rgb(216, 216, 216);
+}
+
+#unread:hover {
+    color:  rgb(59, 243, 221);
+}
+
